@@ -1,0 +1,70 @@
+/* ===== DETAIL SCREEN ===== */
+.fg-detail {
+  display: flex; flex-direction: column; height: 100%; background: #fff;
+
+  &-top {
+    display: flex; justify-content: space-between; align-items: center; padding: 12px 14px;
+    .fg-ghost {
+      background: transparent; border: none; padding: 8px; border-radius: 10px; cursor: pointer;
+      &:active { transform: scale(.96); }
+    }
+  }
+
+  &-image {
+    display: grid; place-items: center; padding: 8px 16px 0;
+    img { width: min(92%, 520px); height: auto; object-fit: contain;
+      filter: drop-shadow(0 26px 22px rgba(0,0,0,.18)); }
+  }
+
+  &-body {
+    padding: 16px 18px 120px;
+
+    .fg-d-title { font-size: 22px; line-height: 1.25; margin: 12px 0 6px; font-weight: 800; color: #1f2937; }
+
+    .fg-d-rating { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+    .fg-star     { color: #f59e0b; fill: #f59e0b; }
+    .fg-star-text{ display: inline-flex; align-items: center; gap: 6px; color: #433; font-weight: 600; }
+    .fg-dot      { opacity: .5; }
+    .fg-muted    { color: #6b7280; font-size: 14px; }
+
+    .fg-d-desc { margin-top: 12px; color: #4b5563; line-height: 1.6; font-size: 14px; }
+
+    .fg-d-row { display: flex; gap: 18px; margin-top: 18px; }
+    .fg-d-col { flex: 1; }
+
+    .fg-range {
+      width: 100%; -webkit-appearance: none; height: 6px; border-radius: 10px; background: #f1f1f1; outline: none;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 999px;
+        background: #fff; border: 2px solid #ef4444; box-shadow: 0 2px 6px rgba(0,0,0,.15);
+      }
+    }
+    .fg-d-scale { display: flex; justify-content: space-between; font-size: 12px; margin-top: 6px; }
+    .fg-green { color: #00a36c; } .fg-red { color: #ef4444; }
+
+    .fg-portion { max-width: 160px; }
+    .fg-stepper { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+    .fg-step {
+      width: 36px; height: 36px; border: none; border-radius: 10px; background: #ef4444; color: #fff; cursor: pointer;
+      box-shadow: 0 6px 12px rgba(239,68,68,.35);
+    }
+    .fg-step-val { min-width: 28px; text-align: center; font-weight: 700; }
+  }
+
+  .fg-orderbar {
+    position: sticky; bottom: 0; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 18%);
+
+    .fg-price {
+      background: var(--fg-red); color: #fff; font-weight: 800; border-radius: 16px;
+      padding: 16px 18px; box-shadow: 0 12px 20px rgba(239,68,68,.35);
+    }
+    .fg-order-btn {
+      flex: 1; height: 56px; border-radius: 16px; border: none; cursor: pointer; font-weight: 800; font-size: 15px;
+      color: #fff; background: #3b3b3b; box-shadow: 0 10px 18px rgba(0,0,0,.22);
+    }
+  }
+}
