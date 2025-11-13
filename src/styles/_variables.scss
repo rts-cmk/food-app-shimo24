@@ -1,0 +1,11 @@
+// Sass değişkenleri
+$red:       #ef4444;
+$bg:        #f5f5f5;
+$muted:     #6b7280;
+
+// Tarayıcıya çıkan CSS değişkenleri (tema için)
+:root {
+  --fg-red:   #{$red};
+  --fg-bg:    #{$bg};
+  --fg-muted: #{$muted};
+}
